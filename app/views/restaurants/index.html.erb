@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Restaurants</h1>
+
+  <ol>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        (<%= restaurant.category %>) -
+        <%= restaurant.address %> -
+        <%= restaurant.phone_number %>
+      </li>
+    <% end %>
+  </ol>
+
+  <%= link_to "Add a restaurant",  new_restaurant_path %>
+</div>
+
